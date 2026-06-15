@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agrinho 2026 | Do Campo à Cidade</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f8f4;
+color:#222;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(12px);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:800;
+color:#7CFC00;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#7CFC00;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+line-height:1.1;
+}
+
+.hero span{
+color:#7CFC00;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#7CFC00;
+color:#111;
+text-decoration:none;
+font-weight:700;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.8rem;
+margin-bottom:50px;
+color:#2f5d26;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about-text h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.about-text p{
+line-height:1.8;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin:20px 0;
+color:#2f5d26;
+}
+
+.timeline{
+position:relative;
+max-width:1000px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:6px;
+background:#7CFC00;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-3px;
+}
+
+.container{
+padding:10px 40px;
+position:relative;
+width:50%;
+}
+
+.left{
+left:0;
+}
+
+.right{
+left:50%;
+}
+
+.content{
+padding:20px;
+background:white;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.stats{
+background:#2f5d26;
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.number{
+font-size:3rem;
+font-weight:800;
+color:#7CFC00;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.faq-item{
+background:white;
+padding:25px;
+margin-bottom:15px;
+border-radius:15px;
+}
+
+.contact{
+background:linear-gradient(135deg,#2f5d26,#4c8c3f);
+color:white;
+text-align:center;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.timeline::after{
+left:31px;
+}
+
+.container{
+width:100%;
+padding-left:70px;
+padding-right:25px;
+}
+
+.right{
+left:0;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">AGRINHO 2026</div>
+
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#campo">Campo</a></li>
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#impacto">Impacto</a></li>
+<li><a href="#galeria">Galeria</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+<h1>Do <span>Campo</span> à <span>Cidade</span></h1>
+
+<p>
+Uma jornada que conecta produção, inovação, sustentabilidade
+e qualidade de vida. Conheça como o agronegócio transforma
+o presente e constrói o futuro do Brasil.
+</p>
+
+<a href="#sobre" class="btn">Explorar Projeto</a>
+
+</div>
+</section>
+
+<section id="sobre">
+
+<h2 class="section-title">Sobre o Agrinho 2026</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80">
+
+<div class="about-text">
+
+<h3>Conectando Realidades</h3>
+
+<p>
+O Agrinho 2026 apresenta a relação entre o campo e a cidade,
+mostrando como agricultores, tecnologia, transporte,
+indústria e consumidores fazem parte de uma mesma cadeia.
+Tudo o que chega às cidades começa com o trabalho dedicado
+de milhares de produtores rurais.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="campo">
+
+<h2 class="section-title">Do Campo à Cidade</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌱 Produção Rural</h3>
+<p>
+O campo produz alimentos, fibras e matérias-primas que abastecem
+milhões de pessoas diariamente.
+</p>
+</div>
+
+<div class="card">
+<h3>🚜 Tecnologia Agrícola</h3>
+<p>
+Máquinas modernas, drones, GPS e inteligência artificial
+aumentam a produtividade.
+</p>
+</div>
+
+<div class="card">
+<h3>🚚 Logística</h3>
+<p>
+Estradas, transportadoras e centros de distribuição fazem
+a conexão entre produção e consumo.
+</p>
+</div>
+
+<div class="card">
+<h3>🏙️ Consumo Urbano</h3>
+<p>
+As cidades recebem alimentos e produtos que sustentam
+a vida moderna.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="tecnologia">
+
+<h2 class="section-title">Tecnologias que Transformam</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🛰️ Agricultura de Precisão</h3>
+<p>
+Monitoramento em tempo real e uso eficiente dos recursos.
+</p>
+</div>
+
+<div class="card">
+<h3>🤖 Inteligência Artificial</h3>
+<p>
+Previsão climática, análise de solo e automação agrícola.
+</p>
+</div>
+
+<div class="card">
+<h3>💧 Irrigação Inteligente</h3>
+<p>
+Economia de água e aumento da produtividade.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Linha do Tempo</h2>
+
+<div class="timeline">
+
+<div class="container left">
+<div class="content">
+<h3>Plantio</h3>
+<p>Preparação do solo e semeadura.</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<h3>Cultivo</h3>
+<p>Cuidados e monitoramento da produção.</p>
+</div>
+</div>
+
+<div class="container left">
+<div class="content">
+<h3>Colheita</h3>
+<p>Uso de máquinas modernas para eficiência.</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<h3>Distribuição</h3>
+<p>Produtos enviados para centros urbanos.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="impacto" class="stats">
+
+<h2 class="section-title" style="color:white">
+Impacto do Agronegócio
+</h2>
+
+<div class="stats-grid">
+
+<div>
+<div class="number">70%</div>
+<p>Alimentos consumidos diariamente</p>
+</div>
+
+<div>
+<div class="number">5M+</div>
+<p>Empregos gerados</p>
+</div>
+
+<div>
+<div class="number">100%</div>
+<p>Conexão entre campo e cidade</p>
+</div>
+
+<div>
+<div class="number">24h</div>
+<p>Cadeia produtiva em operação</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2 class="section-title">Galeria</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027">
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Depoimentos</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+"O campo alimenta sonhos e movimenta a economia."
+</p>
+<h4>Produtor Rural</h4>
+</div>
+
+<div class="testimonial">
+<p>
+"A tecnologia está revolucionando a agricultura."
+</p>
+<h4>Engenheiro Agrônomo</h4>
+</div>
+
+<div class="testimonial">
+<p>
+"Cada alimento consumido tem uma história que começa no campo."
+</p>
+<h4>Consumidor</h4>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Perguntas Frequentes</h2>
+
+<div class="faq-item">
+<h3>O que é o Agrinho?</h3>
+<p>
+Programa educacional que promove cidadania, sustentabilidade
+e valorização do campo.
+</p>
+</div>
+
+<div class="faq-item">
+<h3>Por que o tema Campo e Cidade é importante?</h3>
+<p>
+Porque mostra a interdependência entre produção rural
+e desenvolvimento urbano.
+</p>
+</div>
+
+</section>
+
+<section id="contato" class="contact">
+
+<h2>Construa um Futuro Sustentável</h2>
+
+<p>
+O Agrinho 2026 representa a união entre inovação,
+educação e desenvolvimento.
+</p>
+
+<br>
+
+<a href="#" class="btn">
+Saiba Mais
+</a>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Agrinho | Do Campo à Cidade
+</p>
+
+</footer>
+
+</body>
+</html>
